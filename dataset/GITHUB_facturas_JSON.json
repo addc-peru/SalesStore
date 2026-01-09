@@ -1,0 +1,56 @@
+{
+	"name": "GITHUB_facturas_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Github_Ventas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "Compras/Facturas.json"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"VentaID": {
+					"type": "string"
+				},
+				"Factura": {
+					"type": "string"
+				},
+				"Fecha_Orden": {
+					"type": "string"
+				},
+				"Fecha_Entrega": {
+					"type": "string"
+				},
+				"Fecha_Envio": {
+					"type": "string"
+				},
+				"Estado": {
+					"type": "string"
+				},
+				"Cliente_Code": {
+					"type": "string"
+				},
+				"Nombres": {
+					"type": "string"
+				},
+				"Apellidos": {
+					"type": "string"
+				},
+				"Departamento": {
+					"type": "string"
+				},
+				"Metodo_Pago": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

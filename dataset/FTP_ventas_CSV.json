@@ -1,0 +1,28 @@
+{
+	"name": "FTP_ventas_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FTP_Ventas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FtpServerLocation",
+				"folderPath": "SalesStore/Detalles"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": [
+			{
+				"name": "Detalle_ID|Factura|Categoria|Subcategoria|Producto_ID|Producto|Unidades|Precio_Unitario",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

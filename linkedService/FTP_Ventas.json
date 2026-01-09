@@ -1,0 +1,17 @@
+{
+	"name": "FTP_Ventas",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FtpServer",
+		"typeProperties": {
+			"host": "bh8942.banahosting.com",
+			"port": 21,
+			"enableSsl": true,
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "azure@datha-learning.com",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRBNzMzQTRDLUJBQTItNDIyQS1BODJELUM2RUU2MzQ2QTg3Q19jNjMxYjg2Yi1jNWExLTQyY2MtYWNmYS0wYjM4MzI1MWI4NDciDQp9"
+		}
+	}
+}

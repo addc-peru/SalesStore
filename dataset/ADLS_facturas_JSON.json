@@ -1,0 +1,21 @@
+{
+	"name": "ADLS_facturas_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_Ventas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Facturas.json",
+				"folderPath": "landing/Compras",
+				"fileSystem": "datalake"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

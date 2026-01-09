@@ -1,0 +1,24 @@
+{
+	"name": "ADLS_detalles_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_Ventas",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "landing/Detalles",
+				"fileSystem": "datalake"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
