@@ -5,22 +5,19 @@ resources:
       tasks:
         - task_key: Bronze_Layer
           notebook_task:
-            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
-              Databricks/Azure Databricks/01_bronze_layer
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Github/databricks/01_bronze_layer
             source: WORKSPACE
         - task_key: Silver_Layer
           depends_on:
             - task_key: Bronze_Layer
           notebook_task:
-            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
-              Databricks/Azure Databricks/02_silver_layer
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Github/databricks/02_silver_layer
             source: WORKSPACE
         - task_key: Gold_Layer
           depends_on:
             - task_key: Silver_Layer
           notebook_task:
-            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
-              Databricks/Azure Databricks/03_gold_layer
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Github/databricks/03_gold_layer
             source: WORKSPACE
         - task_key: Reporte_Compras_Power_BI
           depends_on:
