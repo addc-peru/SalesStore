@@ -1,0 +1,40 @@
+resources:
+  jobs:
+    Job_ELT_Ventas:
+      name: Job ELT Ventas
+      tasks:
+        - task_key: Bronze_Layer
+          notebook_task:
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
+              Databricks/SalesStore/01_bronze_layer
+            source: WORKSPACE
+        - task_key: Silver_Layer
+          depends_on:
+            - task_key: Bronze_Layer
+          notebook_task:
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
+              Databricks/SalesStore/02_silver_layer
+            source: WORKSPACE
+        - task_key: Gold_Layer
+          depends_on:
+            - task_key: Silver_Layer
+          notebook_task:
+            notebook_path: /Workspace/Users/cursos@addcpe.onmicrosoft.com/Azure
+              Databricks/SalesStore/03_gold_layer
+            source: WORKSPACE
+        - task_key: Reporte_Compras_Power_BI
+          depends_on:
+            - task_key: Gold_Layer
+          power_bi_task:
+            warehouse_id: 1775255432844b42
+            power_bi_model:
+              workspace_name: MIPrimerELTAzure
+              model_name: Reporte Compras
+              storage_mode: IMPORT
+              authentication_method: OAUTH
+              overwrite_existing: false
+            connection_resource_name: powerbiservicereports
+            refresh_after_update: true
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
